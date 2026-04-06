@@ -8,17 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --white: #FAFAF8;
-    --off-white: #F3F1ED;
-    --cream: #E8E4DC;
-    --warm-gray: #B8B0A4;
-    --mid-gray: #7A7268;
-    --dark: #2C2824;
-    --charcoal: #1A1714;
-    --accent: #3D6B5E;
-    --accent-light: #4A8272;
-    --accent-subtle: rgba(61, 107, 94, 0.08);
-    --gold: #C4A265;
+    --white: #FAFAFA;
+    --off-white: #F4F5F7;
+    --cream: #E2E4E8;
+    --warm-gray: #9CA3AF;
+    --mid-gray: #6B7280;
+    --dark: #1E2A3A;
+    --charcoal: #0F1A2E;
+    --accent: #1B3A5C;
+    --accent-light: #25507A;
+    --accent-subtle: rgba(27, 58, 92, 0.06);
+    --gold: #C9A54E;
+    --gold-light: #D4B565;
+    --gold-subtle: rgba(201, 165, 78, 0.1);
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'DM Sans', -apple-system, sans-serif;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -54,8 +56,10 @@
     font-weight: 600;
     color: var(--charcoal);
     letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 0.6rem;
   }
-  .nav-logo span { color: var(--accent); }
+  .nav-logo svg { width: 26px; height: 26px; color: var(--gold); }
+  .nav-logo span { color: var(--gold); }
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a {
     text-decoration: none; color: var(--mid-gray);
@@ -80,6 +84,9 @@
     padding: 8rem 2rem 6rem;
     position: relative;
     overflow: hidden;
+    background: 
+      linear-gradient(135deg, rgba(250,250,250,0.97) 0%, rgba(250,250,250,0.88) 50%, rgba(244,245,247,0.8) 100%),
+      url('https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1600&q=80') center/cover no-repeat;
   }
   .hero::before {
     content: '';
@@ -97,15 +104,15 @@
   .hero-badge {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.4rem 1rem; border-radius: 100px;
-    background: var(--accent-subtle);
-    color: var(--accent); font-size: 0.75rem; font-weight: 600;
+    background: var(--gold-subtle);
+    color: var(--gold); font-size: 0.75rem; font-weight: 600;
     letter-spacing: 0.06em; text-transform: uppercase;
     margin-bottom: 1.75rem;
     animation: fadeUp 0.8s var(--ease-out) both;
   }
   .hero-badge::before {
     content: ''; width: 6px; height: 6px;
-    background: var(--accent); border-radius: 50%;
+    background: var(--gold); border-radius: 50%;
   }
   .hero h1 {
     font-family: var(--font-display);
@@ -117,7 +124,7 @@
     animation: fadeUp 0.8s var(--ease-out) 0.1s both;
   }
   .hero h1 em {
-    font-style: italic; color: var(--accent);
+    font-style: italic; color: var(--gold);
   }
   .hero-sub {
     font-size: 1.125rem; color: var(--mid-gray);
@@ -137,7 +144,7 @@
     transition: all 0.25s ease; border: none; cursor: pointer;
     letter-spacing: 0.01em;
   }
-  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(61,107,94,0.2); }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(27,58,92,0.25); }
   .btn-primary svg { width: 18px; height: 18px; }
   .btn-secondary {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -151,9 +158,10 @@
   .hero-card {
     background: var(--white);
     border: 1px solid var(--cream);
+    border-top: 3px solid var(--gold);
     border-radius: 16px;
     padding: 2.5rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 20px 60px rgba(0,0,0,0.03);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 20px 60px rgba(0,0,0,0.06);
     animation: fadeUp 0.8s var(--ease-out) 0.4s both;
   }
   .hero-card-header {
@@ -166,7 +174,7 @@
   .stat-number {
     font-family: var(--font-display);
     font-size: 1.75rem; font-weight: 700;
-    color: var(--accent); margin-bottom: 0.25rem;
+    color: var(--gold); margin-bottom: 0.25rem;
   }
   .stat-label { font-size: 0.8rem; color: var(--mid-gray); font-weight: 500; line-height: 1.4; }
   .hero-card-footer {
@@ -186,9 +194,9 @@
   .section-label {
     font-size: 0.7rem; font-weight: 600;
     letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 1rem;
+    color: var(--gold); margin-bottom: 1rem;
   }
-  .section-dark .section-label { color: var(--accent-light); }
+  .section-dark .section-label { color: var(--gold-light); }
   .section-title {
     font-family: var(--font-display);
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);
@@ -219,7 +227,7 @@
   }
   .step-num {
     width: 48px; height: 48px;
-    background: var(--accent); color: var(--white);
+    background: var(--gold); color: var(--white);
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
     margin: 0 auto 1.5rem; position: relative; z-index: 2;
@@ -244,17 +252,17 @@
     transition: all 0.3s ease;
   }
   .service-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 8px 30px rgba(61,107,94,0.06);
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(201,165,78,0.08);
     transform: translateY(-3px);
   }
   .service-icon {
     width: 44px; height: 44px;
-    background: var(--accent-subtle);
+    background: var(--gold-subtle);
     border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 1.25rem;
-    color: var(--accent); font-size: 1.25rem;
+    color: var(--gold); font-size: 1.25rem;
   }
   .service-card h3 {
     font-family: var(--font-display);
@@ -280,9 +288,9 @@
   }
   .perk-check {
     width: 24px; height: 24px; border-radius: 50%;
-    background: rgba(61,107,94,0.25);
+    background: rgba(201,165,78,0.2);
     display: flex; align-items: center; justify-content: center;
-    color: var(--accent-light); font-size: 0.8rem; flex-shrink: 0;
+    color: var(--gold-light); font-size: 0.8rem; flex-shrink: 0;
   }
 
   .booking-form {
@@ -290,6 +298,7 @@
     border-radius: 16px;
     padding: 2.5rem;
     box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    border-top: 3px solid var(--gold);
   }
   .form-title {
     font-family: var(--font-display);
@@ -313,7 +322,7 @@
   }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     border-color: var(--accent); background: var(--white);
-    box-shadow: 0 0 0 3px rgba(61,107,94,0.08);
+    box-shadow: 0 0 0 3px rgba(27,58,92,0.08);
   }
   .form-group textarea { resize: vertical; min-height: 80px; }
   .form-submit {
@@ -339,7 +348,7 @@
     border-radius: 10px;
     transition: all 0.2s ease;
   }
-  .location-card:hover { border-color: var(--accent); }
+  .location-card:hover { border-color: var(--gold); }
   .location-card h4 {
     font-family: var(--font-display);
     font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem;
@@ -381,14 +390,14 @@
     border-top: 1px solid var(--cream);
   }
   .awards-strip p {
-    font-size: 0.8rem; color: var(--accent);
+    font-size: 0.8rem; color: var(--gold);
     font-weight: 600; letter-spacing: 0.02em;
   }
 
   /* ---- APP CTA ---- */
   .app-section {
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--accent) 0%, #2D5548 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, #0F1A2E 100%);
     text-align: center; color: var(--white);
   }
   .app-section .section-label { color: rgba(255,255,255,0.6); }
@@ -420,7 +429,7 @@
     font-family: var(--font-display);
     font-size: 1.1rem; font-weight: 600; color: var(--white);
   }
-  .footer-logo span { color: var(--accent-light); }
+  .footer-logo span { color: var(--gold-light); }
   footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
   .footer-links { display: flex; gap: 1.5rem; }
   .footer-links a {
@@ -473,7 +482,10 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Baryames<span>.</span></div>
+  <div class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7l7.4 6.16a1 1 0 0 1-.66 1.84H4.26a1 1 0 0 1-.66-1.84L11 7v-.27A2 2 0 0 1 12 3z"/><path d="M2 15h20v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2z"/></svg>
+    Baryames <span>Cleaners</span>
+  </div>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#how-it-works">How It Works</a>
@@ -758,7 +770,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Baryames<span>.</span></div>
+    <div class="footer-logo">Baryames <span>Cleaners</span></div>
     <p>&copy; 2026 Baryames Cleaners. Family owned since 1922.</p>
     <div class="footer-links">
       <a href="tel:5174848900">(517) 484-8900</a>
@@ -772,7 +784,7 @@
 function handleSubmit() {
   const btn = document.querySelector('.form-submit');
   btn.textContent = '✓ Request Submitted!';
-  btn.style.background = '#2D5548';
+  btn.style.background = '#0F1A2E';
   btn.disabled = true;
   setTimeout(() => {
     btn.textContent = 'Schedule My Free Pickup →';
